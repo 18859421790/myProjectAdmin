@@ -10,7 +10,8 @@ class TerminalPrintPlugin {
   apply(compiler: Compiler) {
     compiler.hooks.done.tapAsync('TerminalPrintPlugin', (stats, callback) => {
       const publicPath = stats.compilation.outputOptions.publicPath as string;
-      const port = stats.compilation.options.devServer!.port as number;
+      // const port = stats.compilation.options.devServer!.port as number;
+      const port = 3000
       console.log('  App running at:');
       console.log(
         `- Local:   ${chalk.cyan(`http://localhost:${port}${publicPath}`)}`
